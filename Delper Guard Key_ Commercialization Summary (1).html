@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Delper Guard Key: Commercialization Summary</title>
+<style>
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --text: #1b1f24;
+  --muted: #5b6573;
+  --accent: #1f6feb;
+  --border: #dde2e8;
+  --good: #1a7f37;
+  --warn: #9a6700;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1216;
+    --surface: #171b21;
+    --text: #e6e9ee;
+    --muted: #9aa4b2;
+    --accent: #58a6ff;
+    --border: #2a313b;
+    --good: #3fb950;
+    --warn: #d29922;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1216;
+  --surface: #171b21;
+  --text: #e6e9ee;
+  --muted: #9aa4b2;
+  --accent: #58a6ff;
+  --border: #2a313b;
+  --good: #3fb950;
+  --warn: #d29922;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+  padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+}
+main { max-width: 960px; margin: 0 auto; padding: 24px 16px 48px; }
+header h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); margin: 0 0 8px; line-height: 1.2; }
+header p { color: var(--muted); margin: 0; max-width: 70ch; }
+h2 { font-size: 1.25rem; margin: 40px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+h3 { font-size: 1rem; margin: 0 0 6px; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 24px; }
+.kpi { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+.kpi .label { color: var(--muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.kpi .value { font-size: 1.35rem; font-weight: 700; margin-top: 4px; }
+.kpi .note { color: var(--muted); font-size: 0.8rem; margin-top: 2px; }
+.table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+th { color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; }
+tr:last-child td { border-bottom: none; }
+tfoot td { font-weight: 700; }
+.cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.card p { margin: 0; color: var(--muted); font-size: 0.93rem; }
+.tag { display: inline-block; font-size: 0.72rem; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); margin-bottom: 8px; }
+ul.plain { padding-left: 1.1em; margin: 0; }
+ul.plain li { margin-bottom: 8px; }
+.check { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--warn); border-radius: 12px; padding: 16px 18px; }
+.check li { margin-bottom: 8px; }
+.check ul { margin: 0; padding-left: 1.1em; }
+.muted { color: var(--muted); font-size: 0.85rem; }
+.pos { color: var(--good); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Delper Guard Key: Commercialization Summary</h1>
+    <p style="color: var(--accent); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 8px;">Deep Tech. Security built into silicon.</p>
+    <p>A plug-and-play, hardware-isolated antivirus and transaction security coprocessor, fabricated at Samsung Foundry across three market tiers, with pricing, unit economics, and fleet support modeled for a 3,000,000-unit launch.</p>
+  </header>
+
+  <section class="kpis" aria-label="Key figures">
+    <div class="kpi"><div class="label">Silicon NRE</div><div class="value">$486.5M</div><div class="note">Across three tiers</div></div>
+    <div class="kpi"><div class="label">Total Capex</div><div class="value">$1.26B</div><div class="note">NRE plus manufacturing</div></div>
+    <div class="kpi"><div class="label">Upfront Revenue</div><div class="value">$5.60B</div><div class="note">One-time hardware sales</div></div>
+    <div class="kpi"><div class="label">Net Upfront Margin</div><div class="value pos">+$4.34B</div><div class="note">Before opex</div></div>
+    <div class="kpi"><div class="label">Projected ARR</div><div class="value">$102.53B</div><div class="note">Subscriptions per year</div></div>
+  </section>
+
+  <h2>Core Concept</h2>
+  <p>The Delper Guard Key is a USB-attached device that screens for malware and secures high-volume transactions. Its billing rate is set at $0.00005581 per transaction, with a $5.00 monthly subscription floor on the Home tier. The plan's central claim is that the security and commercial limits are built into the silicon itself rather than enforced by software.</p>
+
+  <h2>Hardware Enforcement</h2>
+  <div class="cards">
+    <div class="card">
+      <span class="tag">Tier Segregation</span>
+      <h3>Physical eFuse Matrix</h3>
+      <p>High-voltage pulses permanently blow fuses during wafer testing, so the Home chip cannot reach Enterprise memory tracks or FPGA microcode.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Subscription Control</span>
+      <h3>Hardware Metering ROM Ring</h3>
+      <p>A read-only bootloader requires a time-locked cryptographic handshake. Without a valid advance token, the internal data bus shuts down.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Traffic Control</span>
+      <h3>Isolation Trenches and Cache</h3>
+      <p>A fixed cache size creates backpressure on overloaded Home devices, pausing the host USB pipeline until the processor clears its current block.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Tamper Resistance</span>
+      <h3>Mechanical Write-Lock Switch</h3>
+      <p>On SME and Enterprise casings, a physical switch cuts the write-voltage line to flash memory, blocking host-side changes to local configuration when set to "Lock."</p>
+    </div>
+  </div>
+
+  <h2>Product Tiers and Unit Economics</h2>
+  <p class="muted">Assumes 1,000,000 units per tier. Figures in USD.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Segment</th>
+          <th>Silicon NRE</th>
+          <th>Wafer Node</th>
+          <th>Raw Die</th>
+          <th>Unit BOM</th>
+          <th>Retail (One-time)</th>
+          <th>Monthly Subscription</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Home &amp; Student</td><td>$2.50M</td><td>65nm / 180nm Legacy</td><td>$1.50</td><td>$18.50</td><td>$100.00</td><td>$5.00 (floor)</td></tr>
+        <tr><td>SME</td><td>$35.00M</td><td>28nm Mainstream</td><td>$5.00</td><td>$72.00</td><td>$500.00</td><td>$167.43 (100k tx/day)</td></tr>
+        <tr><td>Enterprise</td><td>$449.00M</td><td>5nm FinFET (SF5)</td><td>$40.00</td><td>$680.00</td><td>$5,000.00</td><td>$8,371.50 (5M tx/day)</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td>Totals</td><td>$486.50M</td><td>&mdash;</td><td>&mdash;</td><td>$770.50M</td><td>$5.60B</td><td>$102.53B / year</td></tr>
+      </tfoot>
+    </table>
+  </div>
+  <ul class="plain" style="margin-top:16px">
+    <li><strong>Home:</strong> Legacy nodes with low mask costs keep the entry tier cheap to produce.</li>
+    <li><strong>SME:</strong> 28nm balances dual-core performance against cost.</li>
+    <li><strong>Enterprise:</strong> Sub-8nm silicon runs high-frequency FPGA and HSM workloads during transaction surges.</li>
+    <li><strong>Sourcing:</strong> The plan claims a 20–25% cost discount versus heavily backlogged foundries such as TSMC.</li>
+  </ul>
+
+  <h2>Three-Million-Unit Impact</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Capital Outlay</h3>
+      <p>$1.26B total: $486.5M in silicon design plus $770.5M in physical manufacturing.</p>
+    </div>
+    <div class="card">
+      <h3>Launch Revenue</h3>
+      <p>$5.60B in hardware sales: $100M Home, $500M SME, and $5.0B Enterprise. Net upfront margin is $4.34B.</p>
+    </div>
+    <div class="card">
+      <h3>Recurring Revenue</h3>
+      <p>About $102.53B per year: $60M Home, $2.01B SME, and $100.46B Enterprise, scaling with transaction volume.</p>
+    </div>
+  </div>
+
+  <h2>AI Support and Patch Operations</h2>
+  <ul class="plain">
+    <li><strong>Operations budget:</strong> A fixed $4.50M per year funds a cloud-edge cluster running quantized ML models.</li>
+    <li><strong>Threat triage:</strong> The AI classifies suspicious telemetry, logs the anomaly, and isolates the affected device without human review.</li>
+    <li><strong>Remote patching:</strong> When new exploits appear, the system tests and compiles firmware updates and pushes them as encrypted binaries over the virtual network.</li>
+  </ul>
+
+  <h2>Self-Healing, Quarantine, and Gatekeeper Guard</h2>
+  <div class="cards">
+    <div class="card">
+      <span class="tag">Error Repair</span>
+      <h3>Automatic Fault Correction</h3>
+      <p>The device detects errors and anomalies in its existing firmware and host-facing software, then applies a signed, pre-approved fix from a whitelist of known-safe routines.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Quarantine</span>
+      <h3>Self-Isolation Without Downtime</h3>
+      <p>Suspect components are isolated on the device while transaction processing continues on the healthy path. Gatekeeper Guard covers screening for the affected function, so operations are not halted.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Recycle Bin</span>
+      <h3>Quarantine Vault, Not Deletion</h3>
+      <p>Errors and anomalies move to a quarantine vault instead of being erased. Entries clear only after a retention period set by the buyer's compliance rules, so audit trails remain available.</p>
+    </div>
+  </div>
+  <p class="muted" style="margin-top:12px">Permanent deletion of anomaly records can destroy the evidence needed for incident response and for certifications such as FIPS 140-3 and PCI. Automatic firmware repair also needs a full audit trail and an administrator option to approve or roll back each change.</p>
+
+  <h2>Points to Verify Before Committing</h2>
+  <div class="check">
+    <ul>
+      <li><strong>Net margin excludes operating costs.</strong> The $4.34B figure leaves out support, sales, certification, returns, and the $4.5M AI operations budget. It also assumes all 3,000,000 units sell at list price.</li>
+      <li><strong>Subscription lockout risk.</strong> A design that disables the USB data bus when a subscription lapses could block a security tool at the moment a user needs it. Consumer protection and liability rules, and any emergency or grace-period behavior, need review.</li>
+      <li><strong>Subscription assumptions.</strong> ARR assumes every SME and Enterprise customer transacts at the stated daily average every day of the year, with no churn.</li>
+      <li><strong>Overstated security claims.</strong> Phrases such as "absolute security" and "zero backpressure lag" should be backed by independent security audits and performance testing before they appear in marketing.</li>
+      <li><strong>Sourcing claims.</strong> The Samsung cost discount and production availability should be confirmed in writing with the foundry.</li>
+    </ul>
+  </div>
+
+  <h2>Path to Competitiveness and Investment</h2>
+  <p>To compete with established security hardware, the key needs certification, independent proof of its security claims, broad integration, recovery options, signed updates, and a subscription model buyers can trust.</p>
+  <div class="cards">
+    <div class="card"><span class="tag">Certification</span><h3>FIPS 140-3 (and PCI PTS if payments are in scope)</h3><p>Banks and enterprises usually require these before evaluating a device.</p></div>
+    <div class="card"><span class="tag">Proof</span><h3>Independent Audit and Bug Bounty</h3><p>A third-party penetration test, a published firmware security model, and a funded public bounty.</p></div>
+    <div class="card"><span class="tag">Integration</span><h3>FIDO2, PKCS#11, and OS Drivers</h3><p>Windows, macOS, Linux, and Android support, with an SDK that lets developers integrate without custom work.</p></div>
+    <div class="card"><span class="tag">Recovery</span><h3>Backup Keys and Replacement</h3><p>Paired backup keys, secure enrollment of a second device, and a documented replacement process.</p></div>
+    <div class="card"><span class="tag">Updates</span><h3>Signed, Rollback-Protected Patches</h3><p>Every remote update is cryptographically signed and cannot downgrade to a vulnerable version.</p></div>
+    <div class="card"><span class="tag">Trust</span><h3>Subscription Redesign</h3><p>A grace period and an offline mode that keeps core security functions working for lapsed accounts.</p></div>
+  </div>
+
+  <h3 style="margin-top:24px">Estimated Investment</h3>
+  <p class="muted">These are planning ranges based on typical industry costs, not quotes. Certification costs and timelines vary by lab, scope, and retest needs, so each line should be confirmed with a lab or vendor before budgeting.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Item</th><th>Estimated Low</th><th>Estimated High</th><th>Typical Timeline</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>FIPS 140-3 validation (lab, consultant, retests)</td><td>$150K</td><td>$400K</td><td>6&ndash;12 months</td></tr>
+        <tr><td>PCI PTS testing (only if payments are in scope)</td><td>$200K</td><td>$500K</td><td>6&ndash;12 months</td></tr>
+        <tr><td>Independent penetration test and firmware audit</td><td>$150K</td><td>$400K</td><td>2&ndash;4 months</td></tr>
+        <tr><td>Public bug bounty (annual reserve)</td><td>$250K</td><td>$1.0M</td><td>Ongoing</td></tr>
+        <tr><td>SDK and OS driver integration (FIDO2, PKCS#11)</td><td>$1.0M</td><td>$2.0M</td><td>9&ndash;12 months</td></tr>
+        <tr><td>Backup key and recovery enrollment</td><td>$300K</td><td>$600K</td><td>4&ndash;6 months</td></tr>
+        <tr><td>Signed, rollback-protected update system and audit tooling</td><td>$400K</td><td>$800K</td><td>4&ndash;6 months</td></tr>
+        <tr><td>Subscription redesign and legal review</td><td>$250K</td><td>$550K</td><td>3&ndash;4 months</td></tr>
+        <tr><td>Competitor and pricing research</td><td>$50K</td><td>$100K</td><td>1&ndash;2 months</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td>Total</td><td>$2.75M</td><td>$6.35M</td><td>Roughly 12&ndash;18 months</td></tr>
+      </tfoot>
+    </table>
+  </div>
+  <p class="muted" style="margin-top:12px">Compared with the $486.5M silicon NRE in the original plan, this investment is modest. Its main effect is on timing: certification and integration gates may delay launch, which should be reflected in the production schedule.</p>
+
+  <h2>Breakdown of the $1.26B Launch Capital</h2>
+  <p class="muted">Assumes 1,000,000 units per tier. Silicon NRE is the one-time design cost; manufacturing is the unit BOM across the run.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Segment</th><th>Silicon NRE</th><th>Manufacturing</th><th>Total Capex</th><th>Share of $1.26B</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Home &amp; Student</td><td>$2.50M</td><td>$18.50M</td><td>$21.00M</td><td>1.7%</td></tr>
+        <tr><td>SME</td><td>$35.00M</td><td>$72.00M</td><td>$107.00M</td><td>8.5%</td></tr>
+        <tr><td>Enterprise</td><td>$449.00M</td><td>$680.00M</td><td>$1,129.00M</td><td>89.8%</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td>Total</td><td>$486.50M (38.7%)</td><td>$770.50M (61.3%)</td><td>$1,257.00M</td><td>100%</td></tr>
+      </tfoot>
+    </table>
+  </div>
+  <p class="muted" style="margin-top:12px">Enterprise accounts for nearly 90% of launch capital, so its silicon schedule and 5nm yields carry most of the financial risk.</p>
+
+  <h2>Investor Pitch Deck</h2>
+  <div class="card">
+    <span class="tag">10 slides</span>
+    <h3>Delper Silicon: Investor Pitch</h3>
+    <p>Covers the problem, solution, product tiers, unit economics at 3 million units, technology moat, path to launch, phased funding, risks, and the ask. Figures match this summary; the ask slide still has a raise-amount placeholder.</p>
+    <p style="margin-top:12px"><a href="https://claude.ai/artifact/V8MHaeFobLYQx3ANxnSrPE" style="color:var(--accent);font-weight:600">Open the pitch deck &rarr;</a></p>
+  </div>
+
+  <h2>Next Steps</h2>
+  <ul class="plain">
+    <li>Finalize the GDSII layout specifications for the Samsung eFuse matrix.</li>
+    <li>Review the electrical routing for the mechanical write-lock switch.</li>
+    <li>Define the factory test sequence for burning initialization keys into the ROM ring.</li>
+  </ul>
+</main>
+</body>
+</html>
