@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Delper Aegis: Executive Summary</title>
+<style>
+:root {
+  --bg: #f7f7f5; --surface: #ffffff; --text: #1d1d1b; --muted: #5d5d58;
+  --accent: #1f5f8b; --border: #dcdcd6; --ok: #2e7040;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161716; --surface: #1f201f; --text: #ecece8; --muted: #a3a39c;
+    --accent: #7fb7de; --border: #3a3b39; --ok: #7cc692;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #161716; --surface: #1f201f; --text: #ecece8; --muted: #a3a39c;
+  --accent: #7fb7de; --border: #3a3b39; --ok: #7cc692;
+  color-scheme: dark;
+}
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: Georgia, "Times New Roman", serif; line-height: 1.6; font-size: 17px;
+}
+main { max-width: 860px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+header { border-bottom: 2px solid var(--accent); margin-bottom: 2rem; padding-bottom: 1rem; }
+h1 { font-size: 2rem; margin: 0 0 .25rem; line-height: 1.2; }
+h2 { font-size: 1.35rem; margin: 2.5rem 0 .75rem; color: var(--accent); }
+h3 { font-size: 1.05rem; margin: 1.25rem 0 .4rem; }
+p { margin: .5rem 0 .9rem; text-align: justify; hyphens: auto; }
+.sub { color: var(--muted); font-style: italic; margin: 0; }
+ul, ol { padding-left: 1.3rem; margin: .4rem 0 1rem; }
+li { margin-bottom: .4rem; text-align: justify; hyphens: auto; }
+.wrap { overflow-x: auto; margin: 1rem 0; }
+table { border-collapse: collapse; width: 100%; font-size: .92rem; background: var(--surface); }
+th, td { border: 1px solid var(--border); padding: .5rem .6rem; text-align: left; vertical-align: top; }
+th { background: var(--bg); font-weight: 600; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.2rem; margin: 1rem 0; }
+.note { border-left: 4px solid var(--accent); padding: .5rem .9rem; background: var(--surface); margin: 1rem 0; }
+.ok { color: var(--ok); font-weight: 600; }
+.layers { font-size: .95rem; }
+.layer { border: 1px solid var(--border); background: var(--surface); padding: .6rem .8rem; margin: .4rem 0; border-radius: 6px; text-align: justify; hyphens: auto; }
+.layer strong { color: var(--accent); }
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: .75rem; margin: 1rem 0; }
+.metric { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: .8rem; text-align: center; }
+.metric .num { font-size: 1.4rem; font-weight: 700; color: var(--accent); }
+.metric .lbl { font-size: .8rem; color: var(--muted); }
+footer { margin-top: 3rem; font-size: .85rem; color: var(--muted); border-top: 1px solid var(--border); padding-top: 1rem; }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>Delper Aegis: Executive Summary</h1>
+  <p class="sub">Hardware-anchored AI enablement for industrial operations, combining Delper Guard with a cloud-hybrid AI platform and a Forward Deployed Engineer (FDE) program anchored at Bangalore University / UVCE. Prepared October 19, 2026.</p>
+</header>
+
+<h2>1. Purpose and Scope</h2>
+<p>Delper Aegis pairs Delper Guard, a hardware security device for industrial networks, with a cloud-hybrid AI software platform and a trained team of Forward Deployed Engineers. Its goal is to protect legacy factory operational technology (OT) from cyber threats while allowing AI systems to diagnose problems in live plants. This summary covers the architecture, university upskilling, budgets, deployment timelines, commercial terms, the internal career framework, the candidate assessment, and the client presentation outline.</p>
+
+<h2>2. Key Figures</h2>
+<div class="metrics">
+  <div class="metric"><div class="num">33,000+</div><div class="lbl">Open or implied FDE roles (cited)</div></div>
+  <div class="metric"><div class="num">Under 8,900</div><div class="lbl">Qualified global FDE engineers (cited)</div></div>
+  <div class="metric"><div class="num">$1.69M</div><div class="lbl">Consolidated upskilling model</div></div>
+  <div class="metric"><div class="num">$1.93M</div><div class="lbl">First-year deployment (3 plants)</div></div>
+</div>
+
+<h2>3. Core Architecture</h2>
+<p>The system uses a four-layer model built on separation of concerns. The AI never has direct write access to machinery. Delper Guard acts as a hardware-enforced gatekeeper, and the software layers handle reasoning and diagnostics.</p>
+<div class="layers">
+  <div class="layer"><strong>Layer 1: Enterprise AI Reasoning Core.</strong> A cloud-hosted large language model (such as Llama-3-70B-Instruct) with a pgvector database of engineering documentation, G-code blueprints, and incident history.</div>
+  <div class="layer"><strong>Layer 2: FDE Platform and Orchestration.</strong> Kafka event pipelines, LangGraph multi-agent orchestration, NVIDIA NeMo guardrails against prompt injection, and a Go-based Vault Conduit service that retrieves data from the hardware.</div>
+  <div class="layer"><strong>Layer 3: Hardware Security (Delper Guard).</strong> An inline DIN-rail device that performs deep packet inspection on Modbus, PROFINET, EtherCAT, and OPC UA traffic at line rate. It runs a quantized 100M-parameter triage model. Physically unclonable functions (PUFs) derive startup keys from SRAM noise. A mechanical SPDT switch cuts the programming voltage (V<sub>PP</sub>), blocking network-based firmware overwrites.</div>
+  <div class="layer"><strong>Layer 4: Operational Technology.</strong> PLCs, SCADA masters, and IIoT sensors on the plant floor.</div>
+</div>
+
+<h2>4. Market Rationale</h2>
+<p>The source cites a global FDE talent gap of roughly 33,000 open or implied roles against fewer than 8,900 qualified engineers. It also cites rapid growth in US and Indian FDE postings and attributes a reported 84% enterprise AI failure rate to legacy infrastructure, data pipelines, and security gaps. Upskilling internal engineers is presented as a more practical route than hiring external consultants. These statistics come from industry commentary and should be confirmed against primary research before external publication.</p>
+
+<h2>5. Upskilling Program (UVCE)</h2>
+<ul>
+  <li><strong>Format:</strong> A six-month, credit-bearing Post-Graduate Advanced Diploma in Forward Deployed Engineering and Cyber-Physical Security, hosted by UVCE's Computer Science department. Cohorts draw from final-year CSE, ISE, and ECE students and working professionals.</li>
+  <li><strong>Months 1–2:</strong> Lab commissioning and board approval.</li>
+  <li><strong>Months 3–4:</strong> Foundational bootcamps in deep packet inspection, packet capture analysis, Kafka, and retrieval-augmented generation (RAG).</li>
+  <li><strong>Month 5:</strong> Advanced labs in LangGraph, adversarial fuzzing of up to 5,000,000 malformed frames per hour, PUF handshakes, and IEC 62443-4-1 secure coding.</li>
+  <li><strong>Month 6:</strong> A capstone building a shadow-mode digital twin with a partner factory, followed by placement through the UVCE Placement Cell into Bengaluru's Global Capability Centers (GCCs).</li>
+  <li><strong>Facilities:</strong> Edge hardware in the MARVEL R&amp;D Lab; a six-GPU NVIDIA A100 cluster in the UVCE IT Centre, accessed remotely through K3s.</li>
+</ul>
+
+<h2>6. Infrastructure and Software Stack</h2>
+<p>The training stack includes LangGraph, LlamaIndex, pgvector, Hugging Face Transformers, Apache Kafka, Go, Docker, K3s, Wireshark, Scapy, OpenPLC, MISRA C:2012 linters, Verilog linting tools, and HashiCorp Vault. The two-week pre-launch window covers racking the hardware, installing Delper Guard boards inline between PLC simulators and attack injectors, and validating the gateway integration.</p>
+
+<h2>7. Budget Scenarios</h2>
+<p>The source presents four budget scopes. Each is shown separately, and they are not additive.</p>
+<div class="wrap">
+<table>
+  <thead><tr><th>Scenario</th><th>Scope</th><th>Total (USD)</th><th>Composition</th></tr></thead>
+  <tbody>
+    <tr><td>Initial training lab</td><td>Single training lab</td><td>$580,000</td><td>CAPEX $420,000; OPEX $160,000 (about ₹4.8 crore)</td></tr>
+    <tr><td>Consolidated upskilling</td><td>Full UVCE program</td><td>$1,690,000</td><td>Includes $420,000 engineering backfill and $180,000 external instructors (₹14.14 crore)</td></tr>
+    <tr><td>Cloud-hybrid global</td><td>45 FDEs across three hubs</td><td>$880,000</td><td>Includes $330,000 edge hardware; cited as reducing upfront CAPEX by over 60%</td></tr>
+    <tr><td>Commercial deployment</td><td>3 plants, 36 production lines</td><td>$330,000 CAPEX plus $1,604,000 per year OPEX</td><td>First-year total $1,934,000</td></tr>
+  </tbody>
+</table>
+</div>
+<p>All scenarios are funded from Delper's $45.1 million AI/ML engineering budget and its $7.85 million compliance pool.</p>
+
+<h2>8. Global Expansion</h2>
+<ul>
+  <li><strong>APAC:</strong> Bangalore University (UVCE) and the University of Tokyo, focused on high-throughput data engineering.</li>
+  <li><strong>AMER:</strong> Stanford or MIT, focused on frontier models and quantization for edge chips.</li>
+  <li><strong>EMEA:</strong> TU Munich or ETH Zurich, focused on IEC 62443 SL-4, FIPS 140-3, and data sovereignty.</li>
+</ul>
+<p>Each hub receives identical hardware kits. A central cloud hosts shared models, a global pgvector threat index, and a Kafka aggregator. Graduates receive a proposed AI-FDE certification.</p>
+
+<h2>9. Commercial Model</h2>
+<p>Delper positions itself as a Hardware-Enabled Managed Service provider, selling "Aegis-Factory as a Service" rather than standalone chips. The proposed pricing is:</p>
+<ul>
+  <li><strong>Upfront:</strong> $6,500 per production line, covering hardware provisioning and site wiring.</li>
+  <li><strong>Monthly:</strong> $8,371.50, covering cloud orchestrator access, threat index updates, and one resident FDE assigned to the plant.</li>
+</ul>
+<p>The value proposition is an IEC 62443 SL-4 security rating and a self-healing factory. The source also projects a $102.47 billion annual recurring market opportunity, which is not attributed to a specific study.</p>
+
+<h2>10. Deployment Model</h2>
+<ul>
+  <li><strong>Standalone plant:</strong> A three-person pod (AI core, OT data pipeline, SecOps hardware) over six months.</li>
+  <li><strong>Multi-site network:</strong> Three central hub FDEs plus one resident FDE per plant, over 9 to 12 months.</li>
+</ul>
+<h3>Twelve-Month Rollout</h3>
+<ol>
+  <li><strong>Months 1–2:</strong> Core cloud ingestion, schema deployment, and stress testing.</li>
+  <li><strong>Months 3–4:</strong> Procure hardware, ship units, and install inline appliances at plants.</li>
+  <li><strong>Months 5–6:</strong> Shadow-mode pilot across all sites with no blocking. Edge models are tuned and safe protocol behaviors are whitelisted.</li>
+  <li><strong>Months 7–9:</strong> All lines move to live blocking enforcement.</li>
+  <li><strong>Months 10–12:</strong> Deploy the HSM network, formalize dual-custody procedures, and run patch drills against the 72-hour window.</li>
+</ol>
+
+<h2>11. Contractual Terms</h2>
+<p>The Master Services Agreement (DELPER-MSA-2026-REV4) provides the following:</p>
+<ul>
+  <li>Delper retains title to all Delper Guard hardware.</li>
+  <li>The customer grants Delper personnel facility access to toggle the write-lock inside electrical cabinets during scheduled maintenance windows.</li>
+  <li>Resident FDEs remain full employees of Delper Consulting. The customer provides workspace, network access, and plant safety protocols but does not direct their employment.</li>
+  <li>Only anonymized threat signatures leave the plant, under a Semantic Scrubbing guarantee.</li>
+  <li>Delper guarantees a signed, rollback-protected patch within 72 hours of a zero-day being registered with its Product Security Incident Response Team (PSIRT).</li>
+  <li>If fees remain unpaid 30 days after invoicing, cloud reasoning access is suspended. Delper Guard units revert to a static, locally isolated state, and autonomous updates pause.</li>
+</ul>
+
+<h2>12. Internal Career Framework and Compensation</h2>
+<div class="wrap">
+<table>
+  <thead><tr><th>Level</th><th>Role</th><th>India total compensation</th><th>US total compensation</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>FDE Associate (sandbox builder)</td><td>₹20 lakh</td><td>$135,000</td></tr>
+    <tr><td>2</td><td>Resident FDE (plant floor integrator)</td><td>₹48 lakh</td><td>$270,000</td></tr>
+    <tr><td>3</td><td>Lead Core FDE (platform architect)</td><td>₹85 lakh</td><td>$440,000</td></tr>
+    <tr><td>4</td><td>Global Principal FDE (strategic consultant)</td><td>₹1.6 crore</td><td>$720,000</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Packages include uptime and SLA-linked bonuses. Incentives include a ₹42,000 or $500 bounty for each critical patch verified in production within the 72-hour window, and a maximum utilization bonus for incidents resolved without dropping active production frames.</p>
+
+<h2>13. Candidate Assessment</h2>
+<p>The assessment runs 150 minutes for 100 marks, with a passing mark of 65. It has three sections:</p>
+<ul>
+  <li><strong>Networks and protocols (30 marks):</strong> Modbus TCP frame structure, placement of deep packet inspection, and a Kafka consumer that scrubs sensitive metadata before cloud routing.</li>
+  <li><strong>Applied AI (40 marks):</strong> A LangGraph state graph with conditional routing, plus a pgvector chunking strategy and a cosine-distance similarity query.</li>
+  <li><strong>Security scenario (30 marks):</strong> A step-by-step procedure for delivering an emergency patch to a device whose write-lock is engaged.</li>
+</ul>
+
+<h2>14. Client Presentation Outline</h2>
+<p>A five-slide deck for CEOs, operations VPs, and CISOs covers the enterprise AI failure problem, the three-pillar service model (Shield, Engine, and Brain), data sovereignty guarantees, pricing and return on investment, and the twelve-month roadmap.</p>
+
+<h2>15. Independent Feasibility Review</h2>
+<p>An independent review rates the architecture highly and identifies the timeline and operational factors that need planning:</p>
+<div class="wrap">
+<table>
+  <thead><tr><th>Dimension</th><th>Rating</th><th>Primary consideration</th><th>Recommended approach</th></tr></thead>
+  <tbody>
+    <tr><td>System architecture</td><td>9.5 / 10</td><td>Parsing real-time OT protocols at line rate is complex</td><td>Run at least 60 days of non-blocking shadow mode</td></tr>
+    <tr><td>Budget and financials</td><td>9.0 / 10</td><td>Upfront hardware costs and tariff variance</td><td>Use cloud GPUs during early training; reserve capital for edge hardware</td></tr>
+    <tr><td>Academic pipeline</td><td>6.5 / 10</td><td>University board and tender cycles often take 6 to 12 months</td><td>Launch the first cohort as a corporate certificate hosted at UVCE</td></tr>
+    <tr><td>Operational rollout</td><td>7.0 / 10</td><td>Physical switch access limits rapid emergency patching</td><td>Schedule site-specific maintenance windows for HSM updates</td></tr>
+  </tbody>
+</table>
+</div>
+<p>The review also recommends extending the university approval and hardware procurement phase to 16 to 20 weeks, and requiring at least two years of embedded or systems engineering experience from candidates. A 24-week program is best suited to engineers who already have that background.</p>
+
+<h2>16. Overall Assessment</h2>
+<div class="card">
+  <p><span class="ok">Strengths:</span> Clear separation between hardware enforcement and software reasoning; a physics-based security model; a credible talent pipeline through a public university; a coherent financial structure; and a recurring-revenue service model.</p>
+  <p><strong>Key considerations for execution:</strong></p>
+  <ul>
+    <li>Budget scenarios should be consolidated into a single approved figure.</li>
+    <li>Market and performance statistics should be validated against primary sources.</li>
+    <li>The 72-hour patch commitment depends on dual-custody staffing and scheduled maintenance windows, given the physical write-lock design.</li>
+    <li>Academic approval timelines should allow for 8 to 12 weeks or more of additional lead time.</li>
+    <li>The 24-week training window is best suited to candidates with prior embedded or systems experience.</li>
+    <li>Shadow mode should run for at least 60 days before live enforcement.</li>
+  </ul>
+  <p><strong>Bottom line:</strong> The architecture and business model are sound and differentiated. Successful execution depends on aligning the university and procurement timelines, consolidating the budget, setting firm candidate entry requirements, and putting the operational safeguards described above in place.</p>
+</div>
+
+<footer>Source: Project Aegis-Factory blueprint compilation (internal working document). Market statistics and third-party references should be confirmed against primary sources before external distribution.</footer>
+
+</main>
+</body>
+</html>
