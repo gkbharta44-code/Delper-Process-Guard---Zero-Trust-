@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Delper Aegis: Executive Summary (Group Basis)</title>
+<style>
+:root {
+  --paper: #e9ecef; --panel: #f8f9fa; --ink: #161d24; --ink-2: #3d4854;
+  --steel: #5a6672; --rule: #c5ccd3; --signal: #e0a100; --signal-ink: #5c4300; --wire: #1f5f7a;
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0e1217; --panel: #161c23; --ink: #e4e8ec; --ink-2: #b7c0c9;
+    --steel: #8b96a1; --rule: #2e3742; --signal: #f0b72a; --signal-ink: #f0b72a; --wire: #6fb4cf; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0e1217; --panel: #161c23; --ink: #e4e8ec; --ink-2: #b7c0c9;
+  --steel: #8b96a1; --rule: #2e3742; --signal: #f0b72a; --signal-ink: #f0b72a; --wire: #6fb4cf; color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif; font-size: 16px; line-height: 1.6; }
+main { max-width: 900px; margin: 0 auto; padding: 40px 20px 72px; }
+header.cover { padding-bottom: 28px; border-bottom: 3px solid var(--ink); margin-bottom: 8px; }
+h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.12; letter-spacing: -0.02em; font-weight: 700; margin: 0 0 18px; max-width: 26ch; }
+.status { display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 0.9rem; color: var(--ink-2); margin: 0; padding: 0; list-style: none; }
+.status strong { color: var(--ink); font-weight: 600; }
+.figures { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--rule); margin: 0 0 8px; }
+.figures div { padding: 22px 16px 22px 0; }
+.figures div + div { padding-left: 20px; border-left: 1px solid var(--rule); }
+.value { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: 500; color: var(--ink); display: block; }
+.label { font-size: 0.88rem; color: var(--steel); }
+section { padding: 32px 0; border-bottom: 1px solid var(--rule); }
+h2 { font-size: 1.4rem; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 16px; }
+h3 { font-size: 1.02rem; font-weight: 600; margin: 26px 0 10px; }
+p { margin: 0 0 14px; color: var(--ink-2); text-align: left; }
+li { color: var(--ink-2); margin-bottom: 6px; text-align: left; }
+ul, ol { padding-left: 1.3rem; margin: 0 0 14px; }
+.lede { font-size: 1.08rem; color: var(--ink); }
+.table-wrap { overflow-x: auto; margin: 14px 0 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.92rem; min-width: 560px; }
+caption { text-align: left; color: var(--steel); font-size: 0.88rem; padding-bottom: 8px; caption-side: bottom; }
+th, td { padding: 9px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; text-align: left; }
+thead th { border-bottom: 2px solid var(--ink); font-weight: 600; color: var(--ink); font-size: 0.86rem; }
+td.n, th.n { text-align: right; font-family: ui-monospace, Menlo, monospace; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr.total td { font-weight: 600; color: var(--ink); border-top: 2px solid var(--ink); }
+.note { border-left: 4px solid var(--wire); background: var(--panel); padding: 12px 16px; margin: 16px 0; color: var(--ink-2); text-align: left; }
+.note strong { color: var(--ink); }
+.caveat { border-left: 4px solid var(--signal); background: var(--panel); padding: 14px 18px; margin: 20px 0 0; font-size: 0.95rem; color: var(--ink-2); text-align: left; }
+footer { margin-top: 40px; font-size: 0.85rem; color: var(--steel); }
+@media (max-width: 640px) { .figures { grid-template-columns: 1fr; } .figures div + div { padding-left: 0; border-left: none; border-top: 1px solid var(--rule); } }
+</style>
+</head>
+<body>
+<main>
+
+<header class="cover">
+  <h1>Delper Aegis: Executive Summary</h1>
+  <ul class="status">
+    <li><strong>Program:</strong> Aegis-Factory as a Service (FaaS)</li>
+    <li><strong>Hardware:</strong> Delper Guard inline firewall</li>
+    <li><strong>Basis:</strong> Delper Group Executive Summary economics</li>
+    <li><strong>Staffing:</strong> 7 hubs of 80,000 FDEs each</li>
+    <li><strong>Certification:</strong> IEC 62443 SL-4 (target, pending testing)</li>
+  </ul>
+</header>
+<div class="figures">
+  <div><span class="value">1,963,334</span><span class="label">Delper Guard hardware units: 960,000 enterprise and 1,003,334 SME</span></div>
+  <div><span class="value">$247.8B</span><span class="label">Annual ARR at full scale (Year 10, group basis)</span></div>
+  <div><span class="value">$204B</span><span class="label">After-tax profit at full scale, before SME and home service costs (not priced in the Group summary)</span></div>
+</div>
+
+<section>
+  <h2>1. Purpose and Summary</h2>
+  <p class="lede">Delper Aegis sells Delper Guard hardware to factories and charges a recurring subscription for it. Enterprise lines pay a subscription, SME and home users pay smaller recurring fees, and Delper charges a net markup on the FDE staffing that operates each plant. The cloud AI platform and the Forward Deployed Engineers (FDEs) run monitoring and plant-level operations. The program protects legacy operational technology (OT) from cyber threats while letting AI systems diagnose live plants.</p>
+  <p>This summary uses the Group summary's economics: the $60,000 enterprise subscription, $10,000 net FDE markup, $6,000 hardware-as-a-service per unit, and the SME and home tiers. The one change from the Group figures is the SME node cost, which is $185 per unit, as decided. All years are program years, with program Year 1 as group Year 7, unless marked as group Year. Section 16 lists the items still to resolve.</p>
+</section>
+
+<section>
+  <h2>2. Product and Architecture</h2>
+  <ul>
+    <li><strong>Enterprise AI core:</strong> a cloud-hosted language model with a vector database of engineering documents, control programs, and incident history.</li>
+    <li><strong>FDE platform:</strong> event pipelines, multi-agent orchestration, guardrails against prompt injection, and a service that retrieves data from the hardware.</li>
+    <li><strong>Hardware (Delper Guard):</strong> inline deep packet inspection of Modbus, PROFINET, EtherCAT, and OPC UA at line rate, a hardware root of trust, and keys derived from chip-level noise rather than stored secrets. The device operates from -40°C to 85°C.</li>
+    <li><strong>Operational technology:</strong> PLCs, SCADA masters, and sensors on the plant floor.</li>
+  </ul>
+  <p>The device has a physical write-lock switch that blocks network overwrites of its programming voltage. The write-lock allows the self-quarantine model to apply signed patches at every step, so no on-site step gates deployment. The AI never has direct write access to machinery.</p>
+  <p>Meeting SL-4 component requirements calls for a physical redesign on 5nm and 28nm process nodes. Three tiers use different nodes: 65/180nm for home and edge sensors, 28nm for SME and zone conduits, and 5nm FinFET for enterprise dark factories.</p>
+</section>
+
+<section>
+  <h2>3. Security Model</h2>
+  <p>The threat model uses IEC 62443-4-2 clause references. Each threat has a hardware or process mitigation.</p>
+  <div class="table-wrap">
+    <table>
+      <caption>Principal threats and mitigations.</caption>
+      <thead><tr><th>Threat</th><th>Attack vector</th><th>Mitigation</th><th>Clause</th></tr></thead>
+      <tbody>
+        <tr><td>Spoofing</td><td>Rogue gateway mimics a SCADA controller</td><td>Per-device asymmetric keys for mutual handshakes</td><td>CR 1.1, 1.2</td></tr>
+        <tr><td>Tampering</td><td>Control parameters altered on the wire</td><td>Inline inspection drops unauthorized commands</td><td>CR 3.1</td></tr>
+        <tr><td>Repudiation</td><td>Configuration rewritten and logs cleared</td><td>Sealed quarantine store that host software cannot clear</td><td>CR 6.1, 6.2</td></tr>
+        <tr><td>Information disclosure</td><td>Interception of sensor data</td><td>Encrypted transport with post-quantum keys</td><td>CR 4.1, 4.2</td></tr>
+        <tr><td>Denial of service</td><td>Packet flood crashes controllers</td><td>Isolation with backpressure; relays keep links up on power loss</td><td>CR 7.1, 7.2</td></tr>
+        <tr><td>Privilege escalation</td><td>Compromised IT device flashes firmware</td><td>Hardware write-lock blocks network overwrites except signed patches applied through quarantine</td><td>CR 2.1</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The device must withstand more than 5,000,000 malformed industrial frames per hour without failure. Signed patches are live on issue. The self-quarantine model applies them at every step, with no fixed response window. The development process is designed to be auditable under IEC 62443-4-1, with signed commits and a hardware token for each developer.</p>
+</section>
+
+<section>
+  <h2>4. Market Context</h2>
+  <p>The source cites a global shortage of roughly 33,000 open or implied FDE roles against fewer than 8,900 qualified engineers. It also cites a reported 84% failure rate for enterprise AI projects, attributed to legacy infrastructure and security gaps. These figures come from industry commentary and must be verified before external use.</p>
+  <p>The broader chip market is strong. SIA reports global chip sales of $791.7B in 2025, and projections for 2026 range from about $1 trillion to $1.5 trillion. Industrial chip market estimates for 2026 range from $63.5B to $95.1B. The conflicting estimates are a reason to cite a specific source and date for any market figure.</p>
+  <div class="note"><strong>Note on the 33,000 figure:</strong> the market statistic and Delper's own FDE requirement (560,000 at full scale) are different numbers and should not be presented as the same.</div>
+</section>
+
+<section>
+  <h2>5. Revenue Streams at Full Scale</h2>
+  <p>Full scale is Year 10 (group), when the platform reaches 80,000 factories and 960,000 production lines. The five recurring streams below sum to the Group's $247.78B base ARR.</p>
+  <div class="table-wrap">
+    <table>
+      <caption>Full-scale ARR by stream, Year 10 (group), USD. Source: Group summary, bottom-up model.</caption>
+      <thead><tr><th>Stream</th><th>Units</th><th class="n">Unit price (per year)</th><th class="n">ARR</th><th class="n">Share</th></tr></thead>
+      <tbody>
+        <tr><td>Enterprise FaaS subscriptions</td><td>960,000 production lines</td><td class="n">$60,000</td><td class="n">$57.60B</td><td class="n">23.2%</td></tr>
+        <tr><td>FDE net markup</td><td>560,000 FDEs</td><td class="n">$10,000</td><td class="n">$5.60B</td><td class="n">2.3%</td></tr>
+        <tr><td>Hardware as a service (replacement and firmware)</td><td>1,963,334 units</td><td class="n">$6,000</td><td class="n">$11.78B</td><td class="n">4.8%</td></tr>
+        <tr><td>SME cybersecurity tier</td><td>28,000,000 SMEs</td><td class="n">$3,600</td><td class="n">$100.80B</td><td class="n">40.7%</td></tr>
+        <tr><td>Home and student endpoint tier</td><td>6,000,000,000 users</td><td class="n">$12</td><td class="n">$72.00B</td><td class="n">29.1%</td></tr>
+        <tr class="total"><td>Total base ARR</td><td></td><td></td><td class="n">$247.78B</td><td class="n">100%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>Full-scale annual figures by segment (Year 10 group, Group summary bottom-up model)</h3>
+  <ul>
+<li><strong>Home and student:</strong> $72.0B a year (6.0 billion users at $12 each)</li>
+<li><strong>SME:</strong> $100.8B a year (28 million SMEs at $3,600 each)</li>
+<li><strong>Industry:</strong> $75.0B a year. This is the enterprise stream, made up of $57.6B in production-line subscriptions (960,000 lines at $60,000), $11.8B in hardware-as-a-service and $5.6B in FDE markup. The Group summary doesn't use the word "Industry" for a single line, so this is taken to mean the enterprise streams.</li>
+</ul>
+<p>Together they make up the Group's $247.8B. Home and student is 29%, SME is 41%, and Industry is 30%.</p>
+<h3>Revenue streams at full scale (Year 10 group)</h3>
+<h4>1. Enterprise FaaS subscriptions: $57.6B a year (23.2%)</h4>
+<p>960,000 production lines at $60,000 each per year. Includes IEC 62443 SL-4 software and the 52-baseline threat feed.</p>
+<h4>2. FDE net markup: $5.6B a year (2.3%)</h4>
+<p>560,000 FDEs at a $10,000 net markup each per year. Staffing itself, at a $50,000 average loaded cost per FDE, is passed through to the customer and is not in ARR.</p>
+<h4>3. Hardware as a service: $11.8B a year (4.8%)</h4>
+<p>1,963,334 Delper Guard units at a blended $6,000 a year, covering replacement and firmware.</p>
+<h4>4. SME cybersecurity tier: $100.8B a year (40.7%)</h4>
+<p>28 million formal SMEs at $3,600 a year ($300 a month) for OT and IT firewall, gateway and telemetry.</p>
+<h4>5. Home and student endpoint tier: $72.0B a year (29.1%)</h4>
+<p>6.0 billion users at $12 a year ($1 a month), delivered through telecom, device OEM or student bundles.</p>
+
+  <p>Staffing is passed through to the customer and is not in ARR. At 560,000 FDEs and a $50,000 average loaded cost, the pass-through is $28.00B a year, recovered at cost, with the $10,000 per FDE markup added on top.</p>
+  <div class="note"><strong>SME and home tiers:</strong> the Group summary says the SME base needs confirming (70% of 40 million formal SMEs), and that the home tier relies on B2B2C bundles with carriers, OEMs and Sana Learn accounts. Their cost to serve is not priced in the Group summary, so Section 9 shows profit before those costs.</div>
+</section>
+
+<section>
+  <h2>6. Pricing to Customers</h2>
+  <p>A production line pays one subscription. Each line also carries 0.583 FDEs, so the customer pays a pass-through staffing share and the markup on top. The bill per line is the sum of the parts.</p>
+  <div class="table-wrap">
+    <table>
+      <caption>Annual charge per production line at 560,000 FDEs across 960,000 lines. USD.</caption>
+      <thead><tr><th>Charge</th><th class="n">Annual</th><th class="n">Monthly</th><th>Basis</th></tr></thead>
+      <tbody>
+        <tr><td>Enterprise subscription</td><td class="n">60,000</td><td class="n">5,000</td><td>Group summary price; includes SL-4 software and 52-baseline threat feed</td></tr>
+        <tr><td>FDE staffing (pass-through at cost)</td><td class="n">29,167</td><td class="n">2,431</td><td>0.583 FDEs per line at $50,000 average loaded cost</td></tr>
+        <tr><td>FDE net markup</td><td class="n">5,833</td><td class="n">486</td><td>0.583 FDEs per line at $10,000 markup</td></tr>
+        <tr class="total"><td>Total bill per line</td><td class="n">95,000</td><td class="n">7,917</td><td>Of which $5,833 is Delper's markup and $60,000 the subscription</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The bill per line is about $95,000 a year, against about $258,000 in the earlier Aegis model. The subscription is $60,000 a year, which means a lower price and an easier acceptance test for customers. Delper's own margin per line is the $60,000 subscription plus the $5,833 markup.</p>
+</section>
+
+<section>
+  <h2>7. Revenue Ramp and Funding</h2>
+  <p>The Group summary ramps Aegis from 25% of full scale in Year 7 to 100% in Year 10. The ramp table below applies the Group's figures, with the same share applied to every stream.</p>
+  <div class="table-wrap">
+    <table>
+      <caption>Group ramp. Active FaaS factories and ARR by operating year, from the Group summary.</caption>
+      <thead><tr><th>Group year</th><th class="n">Scale</th><th class="n">Active FaaS factories</th><th class="n">Active formal SMEs</th><th class="n">Home and student users</th><th class="n">Annual ARR</th></tr></thead>
+      <tbody>
+        <tr><td>Year 7 (launch)</td><td class="n">25%</td><td class="n">20,000</td><td class="n">7.00M</td><td class="n">1.50B</td><td class="n">$61.95B</td></tr>
+        <tr><td>Year 8</td><td class="n">50%</td><td class="n">40,000</td><td class="n">14.00M</td><td class="n">3.00B</td><td class="n">$123.89B</td></tr>
+        <tr><td>Year 9</td><td class="n">75%</td><td class="n">60,000</td><td class="n">21.00M</td><td class="n">4.50B</td><td class="n">$185.84B</td></tr>
+        <tr><td>Year 10 (full scale)</td><td class="n">100%</td><td class="n">80,000</td><td class="n">28.00M</td><td class="n">6.00B</td><td class="n">$247.78B</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Track 1 and Track 2 cash funds the Aegis build in Years 1 to 3, according to the Group summary. The build cost is $1.82B, which is the hardware and silicon cost used in Section 9. From Year 11, Track 1, Track 2 and Aegis revenue service and clear the bonds as quickly as possible. GK Bharta receives no profit share until all loans clear, which the Group places in Year 27.</p>
+</section>
+
+<section>
+  <h2>8. Staffing and FDE Coverage</h2>
+  <p>The 560,000 FDEs are organised as 7 hubs of 80,000 FDEs each. The hubs provide round-the-clock coverage across three 8-hour shifts. Training is online and delivered from the hubs without physical training sites. FDEs are counted at 0.583 per line, which gives 560,000 at 960,000 lines.</p>
+  <div class="table-wrap">
+    <table>
+      <caption>FDE build-up by program year. FDEs required are 0.583 per cumulative line. Trainee intake assumes one trainee becomes one FDE, plus replacement for 10% annual attrition.</caption>
+      <thead><tr><th>Program year</th><th class="n">Cumulative lines</th><th class="n">FDEs required</th><th class="n">Net increase</th><th class="n">Attrition replacement</th><th class="n">Trainee intake</th></tr></thead>
+      <tbody>
+        <tr><td>Year 1</td><td class="n">240,000</td><td class="n">140,000</td><td class="n">140,000</td><td class="n">0</td><td class="n">140,000</td></tr>
+        <tr><td>Year 2</td><td class="n">480,000</td><td class="n">280,000</td><td class="n">140,000</td><td class="n">14,000</td><td class="n">154,000</td></tr>
+        <tr><td>Year 3</td><td class="n">720,000</td><td class="n">420,000</td><td class="n">140,000</td><td class="n">28,000</td><td class="n">168,000</td></tr>
+        <tr><td>Year 4</td><td class="n">960,000</td><td class="n">560,000</td><td class="n">140,000</td><td class="n">42,000</td><td class="n">182,000</td></tr>
+        <tr class="total"><td>Total, Years 1 to 4</td><td class="n">960,000</td><td class="n">560,000</td><td class="n">560,000</td><td class="n">84,000</td><td class="n">644,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note"><strong>Ramp basis:</strong> the table uses the Group's line ramp (240,000 lines in Year 7, 960,000 by Year 10), which gives a faster FDE build than the 28,000, 112,000, 252,000, 420,000, 560,000 ramp in the earlier version. The Year 1 to 4 figures in the earlier version are superseded. Confirm which ramp governs before relying on the intake (Section 16).</div>
+  <p>Training is charged at the full fee with no student discount. The factory is charged ₹9.0 lakh for each FDE it takes. The annual intake is set by the FDE ramp above.</p>
+</section>
+
+<section>
+  <h2>9. Profit at Ramp and Full Scale</h2>
+  <p>The table below costs the enterprise and hardware streams in full. SME and home service costs are not in the Group summary and are left out, so the profit shown is before them. Section 17 shows how much those costs can absorb before the result falls below the earlier model.</p>
+  <div class="table-wrap">
+    <table>
+      <caption>USD billions. Program years 1 to 4 are group Years 7 to 10. Cloud hosting assumes $100 per enterprise line per month, carried over from the earlier model. Hardware build is $1,150 per enterprise unit and $185 per SME node, at deployment. Operations, firmware and silicon amortisation are as in the earlier model. Tax is 17%.</caption>
+      <thead><tr><th>Measure</th><th class="n">Year 1 (group Y7)</th><th class="n">Year 2 (group Y8)</th><th class="n">Year 3 (group Y9)</th><th class="n">Year 4 (group Y10)</th></tr></thead>
+      <tbody>
+        <tr><td>Revenue (annual ARR)</td><td class="n">61.95</td><td class="n">123.89</td><td class="n">185.84</td><td class="n">247.78</td></tr>
+        <tr><td>Cloud hosting (enterprise lines)</td><td class="n">(0.29)</td><td class="n">(0.58)</td><td class="n">(0.86)</td><td class="n">(1.15)</td></tr>
+        <tr><td>Hardware build at deployment</td><td class="n">(0.32)</td><td class="n">(0.32)</td><td class="n">(0.32)</td><td class="n">(0.32)</td></tr>
+        <tr><td>Operations, firmware and silicon amortisation</td><td class="n">(0.09)</td><td class="n">(0.09)</td><td class="n">(0.09)</td><td class="n">(0.09)</td></tr>
+        <tr class="total"><td>Profit before tax, before SME and home service costs</td><td class="n">61.25</td><td class="n">122.90</td><td class="n">184.56</td><td class="n">246.22</td></tr>
+        <tr><td>Tax at 17%</td><td class="n">(10.41)</td><td class="n">(20.89)</td><td class="n">(31.38)</td><td class="n">(41.86)</td></tr>
+        <tr class="total"><td>Profit after tax, before SME and home service costs</td><td class="n">50.84</td><td class="n">102.01</td><td class="n">153.18</td><td class="n">204.36</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>On enterprise and hardware alone, full-scale profit after tax is about $61B a year. The SME and home tiers add $172.8B of revenue, which carries most of the profit at full scale, but their service cost is not priced in the Group summary.</p>
+</section>
+
+<section>
+  <h2>10. Deployment and Roadmap</h2>
+  <p><strong>Deployment.</strong> A standalone plant is staffed by a three-person team. A multi-site network is supported by central hub FDEs over 9 to 12 months. A fresh rollout plant takes 12 months across four phases. Deploying 80,000 factories over four years means about 20,000 new rollouts a year, each taking 12 months. Months 1 to 2 cover cloud ingestion and stress testing. Months 3 to 4 cover procurement, site preparation, and installing inline devices. Months 5 to 6 are a shadow-mode pilot that observes traffic without blocking it. Months 7 to 9 move all lines to live enforcement. Months 10 to 12 cover out-of-band patching and response drills.</p>
+  <p><strong>Roadmap.</strong> Years 1 to 2 cover launch and certification (FIPS 140-3 and ISA/IEC 62443). Years 3 to 4 cover AI assurance, including signed data provenance and automated logging. Years 5 to 7 cover post-quantum migration of signing and key exchange, with each version recertified. Years 8 to 10 cover sustained lifecycle support, with end-of-life notice at least 24 months before the final update.</p>
+  <div class="note"><strong>Shadow mode:</strong> the independent review recommends at least 60 days of shadow mode. The standard schedule provides about two months. The AI assurance timing in Years 3 to 4 is a change from the source's Years 3 to 5, and it must be confirmed.</div>
+</section>
+
+<section>
+  <h2>11. Certification Status</h2>
+  <p>SL-4 is a target, not a rating. Formal ISA/IEC 62443 and FIPS 140-3 testing is scheduled for Years 1 to 2. Client materials should describe the rating as a target until results are issued.</p>
+</section>
+
+<section>
+  <h2>12. Workforce, Training, and Refund Exposure</h2>
+  <p>The training program is a 12-month, online, credit-bearing Post-Graduate Advanced Diploma in Forward Deployed Engineering and Cyber-Physical Security, offered through University Visvesvaraya College of Engineering, Bangalore University. Admission uses a 150-minute, 100-mark assessment with a pass mark of 65, covering networking, applied AI, and a security scenario. Graduates progress from Level 1 (FDE Associate) to Level 4 (Global Principal FDE) based on field performance.</p>
+  <p>Training is delivered online, so the earlier model of 300 trainees per physical hub per year no longer applies. The base fee is ₹9.0 lakh for full operating cost, and ₹3.3 lakh is the instruction-only floor. No student discount applies. No fee has been approved. The model is self-funded, with a conditional repayment term that is pending legal review.</p>
+  <div class="note"><strong>Refund exposure:</strong> under the proposed repayment term, each 300-student intake could owe up to ₹20.0 crore (about $2.38M) at full absorption. The aggregate depends on the intake size under the FDE ramp in Section 8, and no total is given here. That amount is not in any cash figure in this summary. Lab capital of ₹3.53 crore is also outside tuition and would need separate funding.</div>
+  <p>Absorption is conditional. It depends on clearing the assessment, the availability of Delper roles, and placement through the university. Only learners placed in Delper roles are absorbed. Learners placed with partner factories or Global Capability Centers become employees of those organizations.</p>
+</section>
+
+<section>
+  <h2>13. Contract Terms</h2>
+  <p>The Master Services Agreement (DELPER-MSA-2026-REV4) provides that Delper retains title to all Delper Guard hardware, which is leased to the customer rather than sold. Revenue is recognised over the subscription term, and Aegis owns the chips. Only anonymized threat signatures leave the plant. Delper issues signed patches for a registered zero-day as soon as they are ready, with no fixed delivery window. If fees remain unpaid 30 days after invoicing, cloud reasoning access is suspended, and the devices revert to a static, locally isolated state.</p>
+  <div class="note"><strong>Employment status:</strong> resident FDEs are full employees of Delper Consulting, and the customer does not direct their employment. The agreement heading is aligned with this status, and the contracting party is Delper Consulting, the same entity as the employer.</div>
+</section>
+
+<section>
+  <h2>14. Principal Risks</h2>
+  <ul>
+    <li><strong>SME and home service cost:</strong> $172.8B of full-scale revenue comes from the SME and home tiers, and the Group summary does not price their cost to serve. This is the largest single uncertainty in the profit figures.</li>
+    <li><strong>SME and home demand:</strong> the Group targets 28 million SMEs and 6 billion home users by Year 10. The SME basis needs confirming, and the home tier depends on B2B2C bundles that are not yet described.</li>
+    <li><strong>FDE build-up:</strong> 560,000 FDEs are needed by Year 4 on the Group ramp, and the training intake to deliver them is not sized.</li>
+    <li><strong>Hardware replacement:</strong> hardware-as-a-service at $6,000 a unit is treated as covering replacement and firmware. If replacement costs more, the margin falls.</li>
+    <li><strong>Certification:</strong> SL-4 is unconfirmed until testing completes in Years 1 to 2.</li>
+    <li><strong>Wafer supply:</strong> the 5nm tier depends on advanced-node capacity, which the source does not address.</li>
+    <li><strong>Academic timeline:</strong> university approval for freshers can take 6 to 12 months. The 16 to 20 week timeline applies to upskilling.</li>
+    <li><strong>Data sovereignty:</strong> routing threat data to regional databases and sharing GPU clusters between students and live operations require separation controls not yet specified.</li>
+    <li><strong>Legal enforceability:</strong> repayment and retention terms vary by jurisdiction and need counsel review in each country.</li>
+    <li><strong>Market statistics:</strong> talent and failure-rate figures are unverified.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>15. Decisions Required</h2>
+  <ol>
+    <li><strong>Ramp basis:</strong> confirm whether the Group's line ramp (240,000 lines in Year 7) or the earlier ramp governs the FDE build-up.</li>
+    <li><strong>SME and home service cost:</strong> decide the cost to serve for each tier, which is the largest unpriced item.</li>
+    <li><strong>Home and student segment:</strong> confirm the 6.0 billion user target and the B2B2C delivery model.</li>
+    <li><strong>Hardware replacement:</strong> confirm that the $6,000 a unit hardware-as-a-service covers replacement and firmware.</li>
+    <li><strong>Markup presentation:</strong> confirm the $10,000 per FDE is shown to customers as a markup, not as cost recovery.</li>
+    <li><strong>Pool treatment:</strong> confirm that Aegis profit after tax flows to the shared pool from Year 11, and at what cost basis.</li>
+    <li><strong>Training fee and repayment term:</strong> set the fee after legal review and confirm the absorption assumptions.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>16. Items to Resolve Before External Use</h2>
+  <ul>
+    <li>Confirm the SME tier's service model and cost to serve, and the SME base of 70% of formal SMEs.</li>
+    <li>Confirm the home and student delivery model, the 6.0 billion user target, and its cost to serve.</li>
+    <li>Confirm the FDE ramp (Section 8) and set the training intake that delivers it.</li>
+    <li>Confirm the hardware-as-a-service treatment of replacement and firmware.</li>
+    <li>Confirm the cloud hosting rate. The $100 per line per month is an assumption carried over from the earlier model.</li>
+    <li>Confirmed: 7 hubs of 80,000 FDEs each, round-the-clock cover across three 8-hour shifts, no student discount, and factory training charge of ₹9.0 lakh per placed FDE.</li>
+    <li>Verify all market statistics against primary sources.</li>
+    <li>Obtain legal review of repayment, retention, and training-bond terms in each jurisdiction.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>17. Viability Analysis</h2>
+  <p class="lede">On the Group's economics, Aegis is the more profitable route. Full-scale profit after tax is about $204B a year before SME and home service costs, against about $100B in the earlier model. The gap comes from the SME and home tiers, whose service cost is the main unknown.</p>
+
+  <h3>Where the economics work</h3>
+  <ul>
+    <li><strong>Enterprise and hardware:</strong> the subscription, markup and hardware-as-a-service give about $75B of revenue, or about $61B after tax, before SME and home costs.</li>
+    <li><strong>Staffing at cost:</strong> the FDE pass-through recovers staffing cost, so the service does not lose money on people.</li>
+    <li><strong>Lower customer price:</strong> the bill per line is about $95,000 a year, against about $258,000 earlier. The price is easier to accept.</li>
+  </ul>
+
+  <h3>Where the result depends on assumptions</h3>
+  <p>Full-scale profit after tax falls to the earlier model's $100B if SME and home service costs reach about $126B a year before tax. That is about 73% of their $172.8B of revenue. Each $1 per SME per month of service cost is $0.34B a year before tax. Each $0.10 per home user per month is $7.2B a year before tax. The result is therefore very sensitive to these two costs, and neither is priced in the Group summary.</p>
+
+  <h3>Funding and pool</h3>
+  <p>Track 1 and Track 2 fund the build in Years 1 to 3, and from Year 11 Aegis profit services the bonds. The Group's pool model was built on the earlier Aegis profit, so it needs re-running on the new figures before the Year 27 clearance can be confirmed.</p>
+
+  <h3>Verdict</h3>
+  <div class="note"><strong>Viable, subject to SME and home service costs.</strong> Enterprise and hardware are profitable on their own. The SME and home tiers carry most of the revenue, and the case rests on keeping their cost to serve below about $126B a year before tax. That cost has not been priced.</div>
+
+  <h3>Tests before committing capital</h3>
+  <ol>
+    <li>Price the cost to serve for the SME and home tiers, per user per month.</li>
+    <li>Test the $95,000 per-line bill with five to ten prospective enterprise customers.</li>
+    <li>Confirm the FDE ramp and set the training intake that delivers it.</li>
+    <li>Re-run the Group's pool and debt schedule on the new Aegis profit.</li>
+  </ol>
+  <p>These judgments rest on the Group summary's figures and this summary's calculations. The market statistics have not been verified, and this is not financial advice. An independent review of the pricing and cost assumptions should be done before any investment decision.</p>
+</section>
+
+<section>
+  <h2>18. Model Summary: Group Basis</h2>
+  <p class="lede">Aegis launches in group Year 7, which is program Year 1. Track 1 and Track 2 fund the build in Years 1 to 3, with a build cost of $1.82B. Aegis profit services the pool from Year 11. GK Bharta receives no profit share until all loans clear.</p>
+  <p>Section 9 gives the year-by-year profit before SME and home service costs. Those costs are not in the Group summary, so the after-tax figures in Section 9 are an upper bound until they are priced. The pool contribution in Section 17 is the after-tax profit from Section 9, which the Group's ledger has not yet been re-run on.</p>
+  <div class="note"><strong>Not yet modelled:</strong> the cash reserve, distributions, and the Group's debt schedule on the new Aegis profit. These need re-running in the Group ledger before the Year 27 clearance date can be confirmed.</div>
+</section>
+
+<section>
+  <h2>19. Home and Student Segment</h2>
+  <p class="lede">The home and student segment follows the Group summary: 6.0 billion users at $12 a year, delivered through telecom, device OEM or student bundles, giving $72.0B of full-scale ARR. The earlier model of 2.9 billion units sold at $100 rising 10% a year is removed, because it is not in the Group summary.</p>
+  <p>The Group summary says the home and student products are not yet described. Their cost to serve is not priced, so the $72.0B is revenue before service cost. Each $0.10 per user per month of service cost is $7.2B a year before tax. The segment relies on bundling with carriers, OEMs and Sana Learn accounts, which the Group summary describes as keeping acquisition cost down, but it does not quantify.</p>
+  <div class="caveat"><strong>Open item:</strong> the home and student products, their pricing to bundles, and their delivery through carriers and OEMs are not described in the Group summary. This segment should not be treated as priced until those are defined.</div>
+</section>
+
+<section>
+  <h2>20. Autonomous Self-Quarantine Platform</h2>
+  <p class="lede">Delper Guard can also act as the containment layer for the enterprise estate. A threat registry of 52 multi-domain baselines, mapped to CrowdStrike 2026 adversary behaviour, drives automated quarantine across identity, host, cloud, AI, edge and supply-chain boundaries. The goal is containment in under three seconds, because average eCrime breakout is now about 29 minutes and the fastest recorded case was 27 seconds. This section is drawn from a separate threat registry summary. The CrowdStrike figures are as quoted there and have not been independently verified.</p>
+
+  <h3>Threat landscape</h3>
+  <div class="table-wrap">
+    <table>
+      <caption>Trends cited in the threat registry summary, 2025–2026.</caption>
+      <thead><tr><th>Trend</th><th class="n">Figure</th><th>Implication</th></tr></thead>
+      <tbody>
+        <tr><td>Malware-free intrusions</td><td class="n">82%</td><td>Valid credentials and living-off-the-land techniques defeat signature-based antivirus.</td></tr>
+        <tr><td>Year-over-year rise in AI-accelerated attacks</td><td class="n">89%</td><td>Includes LLM-generated malware and LLMjacking, such as 200,000 rogue API requests in under two minutes.</td></tr>
+        <tr><td>Exploited vulnerabilities targeting unmanaged edge devices (China-nexus groups)</td><td class="n">40%</td><td>Unmanaged firewalls and VPN gateways used for long-term silent persistence.</td></tr>
+        <tr><td>Spike in cloud-conscious intrusions (state-nexus)</td><td class="n">266%</td><td>Intrusions designed to bypass endpoint monitoring in software-defined environments.</td></tr>
+        <tr><td>Average eCrime breakout time</td><td class="n">29 min</td><td>Fastest recorded breakout was 27 seconds, which rules out human triage as the first response.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Containment architecture</h3>
+  <p>Telemetry is ingested and parsed in under one second. The SOAR engine matches each event to a registry baseline and fires the matching playbook. Containment then runs across six domains, covering all 52 registry threats.</p>
+  <div class="table-wrap">
+    <table>
+      <caption>Six containment domains. Threat numbers refer to the registry.</caption>
+      <thead><tr><th>Threats</th><th>Domain</th><th>Trigger</th><th>Containment action</th></tr></thead>
+      <tbody>
+        <tr><td>01–10</td><td>Identity, directory and access</td><td>Token reuse across physically impossible locations; device code phishing and OAuth harvesting</td><td>Invalidate OAuth refresh tokens and revoke live browser sessions through the identity provider API</td></tr>
+        <tr><td>11–20</td><td>Endpoint, host and compute</td><td>Volume shadow deletion or process memory injection</td><td>Kernel-level process termination and network isolation, keeping one out-of-band forensics tunnel open</td></tr>
+        <tr><td>21–29</td><td>Cloud infrastructure and microservices</td><td>Storage bucket opened to unauthorised public read; tenant metadata compromise</td><td>Revert the bucket to a private ACL; for wider intrusions, rotate IAM secrets and terminate affected instances</td></tr>
+        <tr><td>30–37</td><td>AI infrastructure and LLMs</td><td>Prompt injection, jailbreak or model extraction patterns in API traffic</td><td>Drop the calling token’s rate limit to 0 and revoke app-layer session permissions</td></tr>
+        <tr><td>38–45</td><td>Operational technology and edge</td><td>Scanning botnets; unsigned firmware written to a PLC</td><td>Temporary null routes at the perimeter; move the affected switch port into an isolated VLAN so the plant keeps running</td></tr>
+        <tr><td>46–52</td><td>Application, network and data supply chain</td><td>Unauthorised dependency or script changes in CI/CD; web parameter attacks</td><td>Halt the build line and invalidate compiled binaries; WAF drops malicious packet strings at the perimeter</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Production requirements</h3>
+  <ol>
+    <li><strong>Telemetry latency.</strong> The SIEM or data lake must parse telemetry from chip registers, cloud control planes and endpoint sensors in under one second.</li>
+    <li><strong>Root-level API access.</strong> The containment engine would need persistent write access to identity providers, EDR controllers, cloud virtualisation planes and core network hardware, so it can inject defences without human authorisation.</li>
+    <li><strong>Context-aware safety interlocks.</strong> Before any high-impact containment script runs, playbooks must check cross-domain correlation. This prevents false positives from causing a self-inflicted outage, such as stopping a production database.</li>
+  </ol>
+
+  <div class="caveat"><strong>Unresolved conflict:</strong> requirement 2 calls for root-level write access to network hardware and other control planes. Section 2 states that the AI never has direct write access to machinery, and the device write-lock governs how patches are applied. The scope of autonomous write access needs an explicit decision before external use. The safety interlocks in requirement 3 should be specified and tested before any playbook acts without human approval.</div>
+</section>
+
+<section>
+  <h2>21. Ransomware Resilience Features</h2>
+  <p class="lede">This section adds the practices in Object First's Ransomware Survival Guide (2025) to the Aegis programme. The guide is written by a vendor of immutable backup storage, so its product claims are not adopted here. The operational practices are standard guidance, and they complement the containment layer in Section 20. Ransomware is treated as a case of when, not if, so each feature below is meant to run before an attack, during the first hours of one, and during recovery.</p>
+
+  <h3>Prevention and hardening</h3>
+  <div class="table-wrap">
+    <table>
+      <caption>Preventive controls from the guide.</caption>
+      <thead><tr><th>Control</th><th>Practice</th></tr></thead>
+      <tbody>
+        <tr><td>Zero Trust segmentation</td><td>Divide the network into isolated zones so that an infection stays in one area, for example by separating user workstations from critical servers.</td></tr>
+        <tr><td>Least privilege</td><td>Grant users and systems only the minimum permissions their tasks need, which limits lateral movement after a compromise.</td></tr>
+        <tr><td>Multi-factor authentication and EDR</td><td>Enforce MFA and deploy endpoint detection and response. Secure and monitor RDP, VPN and third-party access, which are common entry points.</td></tr>
+        <tr><td>Patch management</td><td>Keep operating systems, applications and firmware current, prioritize critical patches, and keep an emergency rollout procedure for zero-day threats.</td></tr>
+        <tr><td>Email and user security</td><td>Authenticate email with SPF, DKIM and DMARC, sandbox attachments, and run awareness training on phishing.</td></tr>
+        <tr><td>Backup strategy</td><td>Apply the 3-2-1 rule (three copies, two media types, one offsite or offline), run regular test restores, and use immutable storage.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Detection and first-hours response</h3>
+  <div class="table-wrap">
+    <table>
+      <caption>Detection signals and response steps from the guide.</caption>
+      <thead><tr><th>Stage</th><th>Practice</th></tr></thead>
+      <tbody>
+        <tr><td>Early warning signs</td><td>Mass file renaming or encryption, sudden CPU or disk spikes, outbound connections to malicious hosts, and disabled antivirus or logging.</td></tr>
+        <tr><td>Centralized monitoring</td><td>Aggregate logs in a SIEM, combine alerts from antivirus, EDR, firewalls and intrusion detection, and map threats to MITRE ATT&amp;CK.</td></tr>
+        <tr><td>Isolation</td><td>Isolate affected systems and disconnect compromised devices, physically or by disabling switch ports.</td></tr>
+        <tr><td>Evidence preservation</td><td>Keep RAM snapshots, disk images and logs. Do not delete files or power off systems unless incident response professionals advise it.</td></tr>
+        <tr><td>Communication</td><td>Use channels that are not on the compromised network. Engage legal counsel, communications and law enforcement early, and notify the cyber insurer promptly.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Recovery and post-incident</h3>
+  <div class="table-wrap">
+    <table>
+      <caption>Recovery and post-incident steps from the guide.</caption>
+      <thead><tr><th>Stage</th><th>Practice</th></tr></thead>
+      <tbody>
+        <tr><td>Root cause</td><td>Identify patient zero, the attack vector and lateral movement paths.</td></tr>
+        <tr><td>Eradication</td><td>Remove malware with trusted tools, reimage where persistence remains, and change all credentials, especially domain administrator accounts.</td></tr>
+        <tr><td>Staged restoration</td><td>Restore critical systems first, verify backup integrity, select the last known clean restore point, and reconnect systems gradually while monitoring for reinfection.</td></tr>
+        <tr><td>Forensics and retrospective</td><td>Run a full forensic investigation and a structured review with all stakeholders, then update playbooks and controls.</td></tr>
+        <tr><td>Compliance</td><td>Assess regulatory notification duties (for example GDPR or HIPAA), obtain legal advice on any ransom payment, and review contracts and insurance.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="caveat"><strong>Integration note:</strong> the evidence and human-approval steps above apply to the containment platform in Section 20. Section 20 requirement 2 (root-level write access that acts without human authorisation) conflicts with the guide's emphasis on coordinated, human-led response, so the decision on autonomous write access should be made with this section in view.</div>
+</section>
+
+<footer>
+  <p>Source: Delper Group Executive Summary (economics, ramp, staffing and home and student tiers), Delper Aegis program blueprint and Delper Guard executive specification (hardware, security and unit costs), revised October 2026. Figures are as stated in the sources unless marked as calculations or assumptions. The SME node cost of $185 is a decision, replacing the Group summary's $4,086 figure. The cloud hosting rate of $100 per enterprise line per month, the 17% tax rate, and the ramp shares applied to every stream are assumptions. SME and home service costs are not priced in the sources. The Section 20 self-quarantine platform is drawn from a separate Delper Guard threat registry summary, and its CrowdStrike figures are as quoted there. Market statistics and third-party references should be confirmed against primary sources before external distribution.</p>
+</footer>
+
+</main>
+</body>
+</html>
